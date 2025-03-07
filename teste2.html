@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.png">
+    <title>Teste</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #000000;
+            background-color: #f0f0f0;
+        }
+        .background {
+            background-color: #ffffff;
+        }
+        header {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: sticky;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0a1fac;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background-color: #0a1fac;
+        }
+        .menu-topo {
+            text-align: right;
+        }
+
+        .menu-topo li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .menu-topo li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .menu-topo li a:hover {
+            transition: 0.7s all;
+            color: #333;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            max-width: 1120px;
+            margin: auto;
+            padding: 1.5rem 9rem;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-top: -55px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav-link {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+            margin-top: -10px;
+        }
+
+        .nav-link li {
+            margin: 0 10px;
+        }
+        .nav-link a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .saibamais {
+            border-radius: 0.5rem;
+            background-color: #fff;
+            color: #36a52f;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        br {
+            padding-bottom: 50px;
+        }
+
+        .saibamais:hover {
+            background: #333;
+            transition: 0.7s all;
+            box-shadow: 2px 2px 2px black;
+        }
+        button img {
+            width: 25px;
+            margin: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cinza {
+            color: #303633;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border-color: #333;
+            width: 40rem;
+        }
+
+        .lanchas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1120px;
+            padding: 3rem 2rem;
+            margin: auto;
+            gap: 0.5rem;
+        }
+
+        .lanchas-cabecalho {
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.5rem;
+        }
+
+        .lanchas-titulo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFF2E7;
+        }
+
+        .lanchas-card-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .lanchas-card {
+            background: #0a1fac;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex-basis: 29rem;
+            margin-top: 2rem;
+        }
+
+        .lanchas-card-cabecalho {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .lancha-titulo {
+            color: #000000;
+            font-size: 1.67rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 50px;
+            margin-bottom: 5px;
+        }
+
+        .lanchas-descricao {
+            color: #C7BAB3;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .img-pontoon {
+            display: flex;
+            align-items: end;
+            gap: 0.5rem;
+            border-radius: 1rem;
+            width: 475px;
+            height: 300px;
+        }
+        footer {
+            color: #ffffff;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: #303633;
+        }
+
+        h6 {
+            color: #FFF2E7;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .logo-footer img {
+            height: 100px;
+        }
+
+        .whats {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+       
+        .banner {
+            width: 100%;
+            height: 0;
+            padding-bottom: 37.5%;
+            position: relative;
+        }
+
+        .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hamburguer {
+            display: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+        }
+
+        @media screen and (max-width: 1365px) {
+            .header-menu{
+                display: none;
+            }
+        }
+    </style>
+
+<script defer src="mobile-navbar.js"></script>
+</head>
+<body>
+    <div class="background">
+        <header class="header-menu">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+            </nav>
+            <nav class="menu-topo grid-12">
+                <button class="hamburguer">
+                    <img src="hamburguer (2).png">
+                </button>
+                <ul class="nav-link">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre-cb.html">Sobre</a></li>
+                    <li><a href="produtos-cb.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="conta.html">Minha Conta</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <div class="banner">
+            <img src="banner.jpg" alt="Imagem Responsiva">
+          </div>
+        <section class="lanchas">
+            <header class="lanchas-cabecalho">
+                <h2 class="lanchas-titulo">Confira os nossos modelos</h2>
+            </header>
+            <div class="lanchas-card-container">
+                <div class="lanchas-card">
+                    <header class="lanchas-card-cabecalho">
+                        <h3 class="lancha-titulo">Tnmg 160408-Ma Vp15Tf</h3>
+                    </header>
+                    <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos, sem perder o conforto, segurança e o luxo?!</p>
+                    <p class="lanchas-descricao">Conheça a Canastra 900</p>
+                    <img class="img-pontoon" src="tnmg.jpg">
+                    <a href="potoonBoat.html"><button class="saibamais">Saiba Mais</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="logo-footer">
+            <br>
+            <img src="logo.png" alt="logo">
+        </div>
+        <br>
+        <h6> rua rio madeira, 1000 - residencial amazonas</h6>
+        <br>
+        <h6>cep 14406-028</h6>
+        <br>
+        <h6>+55 (16) 992392759</h6>
+        <br>
+        <h6>Copyright &lt;CanastraBoat/&gt; 2024</h6>
+        <br>
+        <h6>A melhor e mais segura linha de barcos do brasil</h6>
+    </footer>
+    <div class="whats">
+        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blank">
+            <img src="whatsapp.png" width="75px" alt="Fale conosco pelo whatsapp" title="Fale conosco pelo whatsapp" />
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="logo2.ico">
+    <title>Canastra Boats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #000000;
+            background-color: #f0f0f0;
+        }
+
+        .background {
+            background-color: #ffffff;
+        }
+
+        header {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: sticky;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1c9e4f;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .menu-topo {
+            text-align: right;
+        }
+
+        .menu-topo li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .menu-topo li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .menu-topo li a:hover {
+            transition: 0.7s all;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            max-width: 1120px;
+            margin: auto;
+            padding: 1.5rem 10rem;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-top: -55px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.25rem;
+            margin-top: -10px;
+        }
+
+        .links li {
+            margin: 0 10px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        button {
+            border-radius: 0.5rem;
+            background-color: #1c9e4f;
+            color: #fff;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        button:hover {
+            background: #333;
+            transition: 0.7s all;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        button img {
+            width: 25px;
+            margin: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner {
+            width: 100%;
+            height: 380px;
+            background: url("inicioFoto.PNG") no-repeat center;
+            background-size: cover;
+        }
+
+        .hero {
+            max-width: 1120px;
+            height: 60vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6rem;
+            padding: 0 2rem;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .cinza {
+            color: #303633;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border-color: #333;
+            width: 40rem;
+        }
+
+        .lanchas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1120px;
+            padding: 3rem 2rem;
+            margin: auto;
+            gap: 0.5rem;
+        }
+
+        .lanchas-cabecalho {
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.5rem;
+        }
+
+        .lanchas-titulo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFF2E7;
+        }
+        
+        .lanchas-card-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .lanchas-card {
+            background: #006633;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex-basis: 29rem;
+            margin-top: 2rem;
+        }
+
+        .lanchas-card-cabecalho {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        .lancha-titulo {
+            color: #FFF2E7;
+            font-size: 1.67rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 110px;
+            margin-bottom: 5px;
+        }
+
+        .lanchas-descricao {
+            color: #C7BAB3;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .img-pontoon {
+            display: flex;
+            align-items: end;
+            gap: 0.5rem;
+            border-radius: 1rem;
+            width: 475px;
+            height: 300px;
+        }
+
+        footer {
+            color: #ffffff;
+            padding: 1.5rem;
+            text-align: center;
+            background-color: #303633;
+        }
+
+        h6 {
+            color: #FFF2E7;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .logo-footer img {
+            height: 60px;
+        }
+
+        .whats {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .banner {
+            width: 100%;
+            height: 0;
+            padding-bottom: 37.5%;
+            position: relative;
+        }
+
+        .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                padding: 1rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .lanchas-card-container {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lanchas-titulo {
+                margin-top: 3px;
+            }
+
+            .lanchas-card {
+                flex-basis: 100%;
+                width: 100%;
+            }
+
+            .lancha-titulo {
+                text-align: center;
+                margin-bottom: -3px;
+                margin-left: 42px;
+            }
+
+            .img-pontoon {
+                width: 100%;
+                height: auto;
+            }
+
+            .lanchas-titulo {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .links li {
+                margin: 0;
+            }
+
+            .lanchas-titulo {
+                font-size: 1.2rem;
+            }
+
+            .img-pontoon {
+                width: 100%;
+                height: auto;
+            }
+
+            .lanchas-card-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <header class="header-menu">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+            </nav>
+            <nav class="menu-topo grid-12">
+                <ul class="links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre-cb.html">Sobre</a></li>
+                    <li><a href="produtos-cb.html">Produtos</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <main>
+        <div class="banner"></div>
+        <section class="lanchas">
+            <header class="lanchas-cabecalho">
+                <h2 class="lanchas-titulo">Confira os nossos modelos</h2>
+            </header>
+            <div class="lanchas-card-container">
+                <div class="lanchas-card">
+                    <header class="lanchas-card-cabecalho">
+                        <h3 class="lancha-titulo">canastra 900</h3>
+                    </header>
+                    <p class="lanchas-descricao">Medida 900x260.
+                        <br>
+                        Garantia de casco 3 anos, convés 1 ano. 
+                        <br>
+                        Área gourmet com pia Teca (com depósito água potável) churrasqueira , gabinetes em alumínio.
+                        <br>
+                        Banheiro com descarga elétrica e caixa de águas negras (sistema americano).
+                        <br>
+                        2 mesinhas em teca.
+                        <br>
+                        Iluminação na targa e sob sofás c controle remoto.
+                        <br>
+                        Luzes de navegação.
+                        <br>
+                        Canhão de luz c controle remoto.
+                        <br>
+                        Targa rebatível.
+                        <br>
+                        Capa protetora.
+                        <br>
+                        Tapete Náutico.
+                        <br>
+                        Diâmetro tubular 635.
+                        <br>
+                        Alumínio de grau naval.
+                        <br> 
+                        Espuma anti-fungo, anti-mofo, Tecido UV.
+                        <br>
+                        Estrutura dos bancos em resinas de grau naval.
+                        <br>
+                        Escada de Popa.
+                        <br>
+                        4 portas de acesso.
+                        <br>
+                        Banco giratório do Piloto e c regulagem de altura.
+                        <br>
+                        Carregador de celular.
+                        <br>
+                        Rico em porta copos.
+                        <br>
+                        Pintura eletrostática do alumínio de convés.
+                        <br> 
+                        Direção hidráulica.
+                        <br>
+                        Tanque combustível 120L.
+                        <br>
+                        Carreta rodo-encalhe incluso.
+                        <br>
+                        Fábrica especializada em Pontoons com 13 anos de experiência.</p>
+                    <img class="img-pontoon" src="pootonboatFoto.jpeg">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="logo-footer">
+            <br>
+            <img src="logo1.png" alt="logo">
+        </div>
+        <br>
+        <h6> rua rio madeira, 1000 - residencial amazonas</h6>
+        <br>
+        <h6>cep 14406-028</h6>
+        <br>
+        <h6>+55 (16) 992392759</h6>
+        <br>
+        <h6>Copyright &lt;CanastraBoat/&gt; 2024</h6>
+        <br>
+        <h6>A melhor e mais segura linha de barcos do brasil</h6>
+    </footer>
+    <div class="whats">
+        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blank">
+            <img src="whatsapp.png" width="75px" alt="Fale conosco pelo whatsapp" title="Fale conosco pelo whatsapp" />
+        </a>
+    </div>
+</body>
+</html>

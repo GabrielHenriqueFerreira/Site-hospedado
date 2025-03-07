@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="icon.png">
+    <title>Br Tools</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            color: #000000;
+            background-color: #f0f0f0;
+        }
+        .background {
+            background-color: #ffffff;
+        }
+        header {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: sticky;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0a1fac;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background-color: #0a1fac;
+        }
+        .menu-topo {
+            text-align: right;
+        }
+
+        .menu-topo li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .menu-topo li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .menu-topo li a:hover {
+            transition: 0.7s all;
+            color: #333333;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            max-width: 1120px;
+            margin: auto;
+            padding: 1.5rem 9rem;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-top: -55px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav-link {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+            margin-top: -10px;
+        }
+
+        .nav-link li {
+            margin: 0 10px;
+        }
+        .nav-link a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+
+     /* configurações do botão saiba mais*/
+        .saibamais {
+            border-radius: 0.5rem;
+            background-color: #fff;
+            color: #45a1f8;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        br {
+            padding-bottom: 50px;
+        }
+
+        .saibamais:hover {
+            background: #383737;
+            transition: 0.7s all;
+            box-shadow: 2px 2px 2px black;
+        }
+         /* */
+
+        button img {
+            width: 25px;
+            margin: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cinza {
+            color: #303633;
+            text-transform: uppercase;
+        }
+
+        hr {
+            border-color: #333;
+            width: 40rem;
+        }
+
+      /* borda card*/
+        .lanchas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1120px;
+            padding: 3rem 2rem;
+            margin: auto;
+            gap: 0.5rem;
+        }
+
+        .lanchas-cabecalho {
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.5rem;
+        }
+
+        .lanchas-titulo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFF2E7;
+        }
+
+        .lanchas-card-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .lanchas-card {
+            background: #0a1fac;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex-basis: 29rem;
+            margin-top: 2rem;
+        }
+
+        .lanchas-card-cabecalho {
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: end;
+        }
+       
+        .lancha-titulo {
+            color: #000000;
+            font-size: 1.67rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-left: 50px;
+            margin-bottom: 5px;
+        }
+
+        .lanchas-descricao {
+            color: #C7BAB3;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .img-pontoon {
+            display: flex;
+            align-items: end;
+            gap: 0.5rem;
+            border-radius: 1rem;
+            width: 475px;
+            height: 300px;
+        }
+         /**/
+         .conta-carrinho {
+            display: flex;
+            align-items: center;
+            margin-left: -50px; /* Ajuste para mover o ícone mais para a esquerda */
+        }
+        
+        .conta-carrinho img {
+            margin-left: -20px; /* Reduza o espaço entre "Minha Conta" e o ícone do carrinho */
+            margin-top: -10px; /* Suba o ícone um pouco */
+        }
+        footer {
+            color: #ffffff;
+            padding: 0.5rem;
+            text-align: center;
+            background-color: #303633;
+        }
+
+        h6 {
+            color: #FFF2E7;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .logo-footer img {
+            height: 100px;
+        }
+
+        .whats {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+       
+        .banner {
+            width: 100%;
+            height: 0;
+            padding-bottom: 37.5%;
+            position: relative;
+        }
+
+        .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hamburguer {
+            display: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+        }
+
+         /* Parte da responsividade*/
+        @media screen and (max-width: 1365px) {
+            header {
+                flex-direction: row;
+                padding: 1rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .banner {
+                height: 300px;
+            }
+
+            .hamburguer {
+                display: block;
+                margin-top: -15px;
+                margin-left: 270px;
+            }
+
+            .lanchas-card-container {
+                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lanchas-titulo {
+                margin-top: 3px;
+                text-align: center;
+            }
+
+            .lanchas-card {
+                flex-basis: 100%;
+                width: 100%;
+            }
+
+            .lancha-titulo {
+                font-size: 22px;
+                text-align: center;
+                margin-bottom: 0px;
+                margin-left: 13px;
+            }
+
+            .img-pontoon {
+                width: 100%;
+                height: auto;
+            }
+
+            .lanchas-titulo {
+                font-size: 1.2rem;
+            }
+
+            .nav-link {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 102vh;
+                background: #0a1fac;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                clip-path: circle(0% at 100% 0%);
+                transition: clip-path 0.6s ease-in-out;
+                pointer-events: none;
+            }
+
+            .nav-link.active {
+                clip-path: circle(150% at 100% 0%);
+                pointer-events: all;
+            }
+
+            .nav-link {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .nav-link li {
+                margin: 0;
+            }
+
+            .lanchas-titulo {
+                font-size: 1.2rem;
+            }
+
+            .lancha-titulo {
+                text-align: center;
+                margin-bottom: -3px;
+                margin-left: 42px;
+            }
+
+            .img-pontoon {
+                width: 100%;
+                height: auto;
+            }
+
+            .lanchas-card-container {
+                padding: 0;
+            }
+        }
+        button {
+            border-radius: 0.5rem;
+            background-color: #2596be;
+            color: #fff;
+            cursor: pointer;
+            padding: 1rem;
+        }
+
+        .saibamais:hover {
+            background: #333;
+            transition: 0.7s all;
+            box-shadow: 2px 2px 2px black;
+        }
+
+        /* Estilo do ícone do carrinho no canto superior esquerdo */
+        .cart-icon {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .cart-icon img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Estilo do carrinho de compras */
+        .cart {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 20px;
+            z-index: 10000;
+        }
+
+        .cart h3 {
+            text-align: center;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-item button {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .checkout-btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+<script defer src="mobile-navbar.js"></script>
+</head>
+<body>
+    <div class="background">
+        <header class="header-menu">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                    
+                </div>
+            </nav>
+            <nav class="menu-topo grid-12">
+                <button class="hamburguer">
+                    <img src="hamburguer (2).png">
+                </button>
+                <ul class="nav-link">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre-cb.html">Sobre</a></li>
+                    <li><a href="produtos-cb.html">Produtos</a></li>
+                    <li><a href="conta.html">Minha Conta</a></li>
+                    <li class="conta-carrinho">
+                    <a href="carrinho.html"><img src="carrinho.png" width="35" height="35" alt="Carrinho de compras"></a>
+                    </li>       
+                </ul>
+        </header>
+    </div>
+    <main>
+        <div class="banner">
+            <img src="banner.jpg" alt="Imagem Responsiva">
+          </div>
+          <div class="detalhe-verde"></div>
+          <div class="detalhe-amarelo"></div>
+        <section class="lanchas">
+            <header class="lanchas-cabecalho">
+                <h2 class="lanchas-titulo">Confira os nossos modelos</h2>
+            </header>
+            <div class="lanchas-card-container">
+                <div class="lanchas-card">
+                    <header class="lanchas-card-cabecalho">
+                        <h3 class="lancha-titulo">Tnmg 160408-Ma Vp15Tf</h3>
+                    </header>
+                    <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos, sem perder o conforto, segurança e o luxo?!</p>
+                    <p class="lanchas-descricao">Conheça a Canastra 900</p>
+                    <img class="img-pontoon" src="tnmg.jpg">
+                    <a href="potoonBoat.html"><button class="saibamais">Saiba Mais</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="logo-footer">
+            <br>
+            <img src="logo.png" alt="logo">
+        </div>
+        <br>
+        <h6> Pix: 42.721.573/0001-54</h6>
+        <br>
+        <h6>Cnpj: 42.721.573/0001-54</h6>
+        <br>
+        <h6>E-mail: josejunior71@mail.com</h6>
+        <br>
+        <h6>Número de contato: +55 (16) 99192-8412</h6>
+        <br>
+        <h6>Copyright &lt;BrTools/&gt; 2025</h6>
+    </footer>
+    <div class="whats">
+        <a href="https://wa.me/5516993722890?text=Oi, tudo bem? Quero mais informações!" target="_blank">
+            <img src="whatsapp.png" width="75px" alt="Fale conosco pelo whatsapp" title="Fale conosco pelo whatsapp" />
+        </a>
+    </div>
+</body>
+</html>

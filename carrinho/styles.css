@@ -1,0 +1,296 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #000000;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0a1fac;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header img {
+  width: 100px;
+  height: 100px;
+}
+
+main {
+  background: #fff;
+  padding: 0 30px 30px;
+}
+main .page-title {
+  font-size: 40px;
+  padding: 50px 0;
+  text-align: center;
+}
+main .content {
+  display: flex;
+}
+main .content section {
+  flex: 1;
+}
+main .content aside {
+  min-width: 250px;
+  margin-left: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead tr {
+  border-bottom: 3px solid #ccc;
+}
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+}
+table tbody tr {
+  border-bottom: 3px solid #ccc;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table tbody tr td {
+  padding: 30px 0;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+.product img {
+  border-radius: 6px;
+}
+.product .info {
+  margin-left: 20px;
+}
+.product .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product .info .category {
+  color: #666;
+}
+
+.qty {
+  background: #eee;
+  display: inline-flex;
+  padding: 0 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 30px;
+}
+.qty span {
+  margin: 0 10px;
+}
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  height: 100%;
+  cursor: pointer;
+}
+.qty button:hover {
+  background: #ddd;
+}
+
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.remove:hover {
+  background: #ddd;
+}
+
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #ddd;
+  color: #222;
+}
+aside .box header {
+  color: #ddd;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+aside .box .info > div:last-child {
+  margin: 0;
+}
+aside .box .info button {
+  color: #253cd6;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+aside .box .info button i {
+  margin-left: 5px;
+}
+aside .box footer {
+  padding: 15px 20px;
+  background: #ccc;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+aside > button {
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #0a1fac;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+}
+aside > button:hover {
+  background: #3d3c3c;
+}
+
+.site-footer {
+  background-color: #303633;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 30px;
+}
+.site-footer .logo-footer img {
+  height: 100px;
+}
+.site-footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.site-footer .footer-content .footer-section {
+  flex: 1;
+  margin-right: 20px;
+}
+.site-footer .footer-content .footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.site-footer .footer-content .footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+}
+.site-footer .footer-content .footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-content .footer-section ul li {
+  margin-bottom: 10px;
+}
+.site-footer .footer-content .footer-section ul li a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+}
+.site-footer .footer-content .footer-section ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.site-footer .footer-content .footer-section .social-icons {
+  display: flex;
+  gap: 10px;
+}
+.site-footer .footer-content .footer-section .social-icons a {
+  color: #ddd;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+.site-footer .footer-content .footer-section .social-icons a:hover {
+  color: #fff;
+}
+.site-footer .frete-input {
+  margin-top: 10px;
+}
+.site-footer .frete-input input {
+  padding: 8px;
+  width: 150px;
+  margin-right: 10px;
+}
+.site-footer .frete-input button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.site-footer .frete-input button:hover {
+  background-color: #0056b3;
+}
+.site-footer .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.frete-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaçamento entre o campo de CEP e a mensagem de erro */
+}
+
+.frete-input input {
+  padding: 8px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+#cep-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px; /* Espaçamento acima da mensagem de erro */
+  display: none; /* Inicialmente oculta */
+}/*# sourceMappingURL=styles.css.map */

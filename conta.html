@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta</title>
+    <link rel="stylesheet" href="styleL.css">
+</head>
+<body>
+    <div class="background">
+        <header class="header-menu">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="logo">
+                </div>
+            </nav>
+            <nav class="menu-topo grid-12">
+                <button class="hamburguer">
+                    <img src="hamburguer (2).png">
+                </button>
+                <ul class="nav-link">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre-cb.html">Sobre</a></li>
+                    <li><a href="produtos-cb.html">Produtos</a></li>
+                    <li><a href="carrinho.html">Carrinho</a></li>
+                    <li><a href="conta.html">Minha Conta</a></li>                
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="background">
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <ul class="C-icone">
+                <li><a href="#perfil"><ion-icon name="person-circle-outline"></ion-icon> Perfil</a></li>
+                <li><a href="#configuracoes"><ion-icon name="settings-outline"></ion-icon> Configurações</a></li>
+                <li><a href="#historico"><ion-icon name="time-outline"></ion-icon> Histórico</a></li>
+            </ul>
+            <button class="sair-btn" onclick="window.location.href='logout.php'">
+                <ion-icon name="log-out-outline"></ion-icon> Sair
+            </button>
+        </header>
+        <main class="C-title">
+            <h1>Bem-vindo, [Nome do Usuário]</h1>
+            <p>Aqui você pode ver e gerenciar sua conta</p>
+            <hr>
+            <section class="info-conta">
+                <div class="info-item">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <p>Nome: <strong>[Nome do Usuário]</strong></p>
+                </div>
+                <div class="info-item">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <p>Email: <strong>[Email do Usuário]</strong></p>
+                </div>
+                <div class="info-item">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <p>Telefone: <strong>[Telefone do Usuário]</strong></p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
