@@ -6,14 +6,29 @@
     <link rel="shortcut icon" type="image/x-icon" href="icon.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="responsive.js"></script>
     <title>Br Tools</title>
 </head>
 <body>
     <header>
-        <a href="/home/gabriel/Downloads/site igor/inicio (1) (1).html">
+        <a href="/home/gabriel/Downloads/site igor/index.html">
             <img src="logo.png" width="100px" height="100px" alt="Logo Br Tools">
         </a>
+        <!-- Ícone de hambúrguer para telas menores -->
+        <div class="menu-icon" id="menu-icon">
+            <i class='bx bx-menu'></i> <!-- Ícone de hambúrguer do Boxicons -->
+        </div>
+        <!-- Menu de navegação -->
+        <nav class="navbar" id="navbar">
+            <ul>
+                <li><a href="/home/gabriel/Downloads/site igor/index.html">Início</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                <li><a href="/sobre">Sobre Nós</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
+    
 
     <main>
         <div class="page-title">Seu Carrinho</div>
@@ -26,7 +41,6 @@
                             <th>Preço</th>
                             <th>Quantidade</th>
                             <th>Total</th>
-                            <th>-</th>
                         </tr>
                     </thead>
                     <tbody id="carrinho-itens">
@@ -144,23 +158,22 @@
             localStorage.setItem('carrinho', JSON.stringify(carrinho));
             exibirCarrinho();
         }
-
         async function calcularFrete() {
             const cep = document.getElementById('cep').value;
-
+        
             if (!cep || cep.length !== 8 || isNaN(cep)) {
                 document.getElementById('cep-error').style.display = 'block';
                 frete = 0;
                 atualizarTotal();
                 return;
             }
-
+        
             const peso = 0.3;
             const altura = 4;
             const largura = 12;
             const comprimento = 17;
             const cepOrigem = "14408014";
-
+        
             try {
                 const response = await fetch('http://localhost:3220/calcular-frete', {
                     method: 'POST',
@@ -176,22 +189,37 @@
                         comprimento: comprimento,
                     }),
                 });
-
+        
                 const data = await response.json();
-
-                if (data && data.length > 0) {
-                    frete = parseFloat(data[0].price);
+                console.log('Dados da API:', data); // Log dos dados
+        
+                if (response.ok) {
+                    if (data && data.length > 0 && data[0].price) {
+                        // Verifica se o frete é gratuito (R$ 0,00)
+                        if (data[0].price === 'R$ 0,00') {
+                            document.getElementById('frete').textContent = 'Gratuito';
+                            document.getElementById('frete').style.color = 'green'; // Aplica a cor verde
+                            frete = 0;
+                        } else {
+                            // Formata o valor do frete
+                            const precoFormatado = data[0].price.replace('R$', '').replace(',', '.').trim();
+                            frete = parseFloat(precoFormatado);
+                            document.getElementById('frete').textContent = `$ ${frete.toFixed(2)}`;
+                            document.getElementById('frete').style.color = ''; // Remove a cor verde
+                        }
+                    } else {
+                        frete = 0;
+                        alert('Não foi possível calcular o frete. Tente novamente mais tarde.');
+                    }
                 } else {
-                    frete = 0;
-                    alert('Não foi possível calcular o frete. Tente novamente mais tarde.');
+                    throw new Error(data.error || 'Erro ao calcular frete');
                 }
             } catch (error) {
                 console.error('Erro ao calcular frete:', error);
                 frete = 0;
                 alert('Erro ao calcular o frete. Tente novamente mais tarde.');
             }
-
-            document.getElementById('frete').textContent = `$${frete.toFixed(2)}`;
+        
             atualizarTotal();
         }
 

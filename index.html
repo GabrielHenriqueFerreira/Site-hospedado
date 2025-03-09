@@ -201,9 +201,7 @@
             flex-direction: column;
             border-radius: 0.5rem;
             margin-bottom: 2rem;
-            /* Adiciona um espaçamento abaixo do título */
         }
-
 
         .img-pontoon {
             display: flex;
@@ -215,17 +213,38 @@
         }
 
         .conta-carrinho {
+            position: relative;
             display: flex;
             align-items: center;
-            margin-left: -50px;
-            /* Ajuste para mover o ícone mais para a esquerda */
+            margin-left: 10px;
         }
 
-        .conta-carrinho img {
-            margin-left: -20px;
-            /* Reduza o espaço entre "Minha Conta" e o ícone do carrinho */
-            margin-top: -10px;
-            /* Suba o ícone um pouco */
+        #carrinho-quantidade {
+            position: absolute;
+            top: -15px;
+            right: -20px;
+            background-color: red;
+            color: white;
+            border-radius: 100%;
+            padding: 3px 7px;
+            font-size: 12px;
+        }
+
+        .carrinho-responsivo {
+            display: none;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        #carrinho-quantidade-responsivo {
+            position: absolute;
+            top: -15px;
+            right: -20px;
+            background-color: red;
+            color: white;
+            border-radius: 100%;
+            padding: 3px 7px;
+            font-size: 12px;
         }
 
         footer {
@@ -252,7 +271,6 @@
             right: 30px;
             z-index: 9999;
         }
-
 
         .banner {
             width: 100%;
@@ -296,40 +314,23 @@
 
             .hamburguer {
                 display: block;
-                margin-top: -15px;
-                margin-left: 270px;
+                margin-top: 0;
             }
 
-            .lanchas-card-container {
-                padding: 1rem;
-                flex-direction: column;
+            .conta-carrinho {
+                display: none;
+            }
+
+            .carrinho-responsivo {
+                display: block;
+                margin-left: 0;
+            }
+
+            .menu-topo {
+                display: flex;
                 align-items: center;
-            }
-
-            .lanchas-titulo {
-                margin-top: 3px;
-                text-align: center;
-            }
-
-            .lanchas-card {
-                flex-basis: 100%;
-                width: 100%;
-            }
-
-            .lancha-titulo {
-                font-size: 22px;
-                text-align: center;
-                margin-bottom: 0px;
-                margin-left: 13px;
-            }
-
-            .img-pontoon {
-                width: 100%;
-                height: auto;
-            }
-
-            .lanchas-titulo {
-                font-size: 1.2rem;
+                justify-content: space-between;
+                padding-top: 10px;
             }
 
             .nav-link {
@@ -352,139 +353,8 @@
                 clip-path: circle(150% at 100% 0%);
                 pointer-events: all;
             }
-
-            .nav-link {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            .nav-link li {
-                margin: 0;
-            }
-
-            .lanchas-titulo {
-                font-size: 1.2rem;
-            }
-
-            .lancha-titulo {
-                text-align: center;
-                margin-bottom: -3px;
-                margin-left: 42px;
-            }
-
-            .img-pontoon {
-                width: 100%;
-                height: auto;
-            }
-
-            .lanchas-card-container {
-                padding: 0;
-            }
-        }
-
-        button {
-            border-radius: 0.5rem;
-            background-color: #2596be;
-            color: #fff;
-            cursor: pointer;
-            padding: 1rem;
-        }
-
-        .saibamais:hover {
-            background: #333;
-            transition: 0.7s all;
-            box-shadow: 2px 2px 2px black;
-        }
-
-        /* Estilo do ícone do carrinho no canto superior esquerdo */
-        .cart-icon {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            cursor: pointer;
-            z-index: 9999;
-        }
-
-        .cart-icon img {
-            width: 50px;
-            height: 50px;
-        }
-
-        /* Estilo do carrinho de compras */
-        .cart {
-            display: none;
-            position: fixed;
-            top: 60px;
-            left: 10px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
-            padding: 20px;
-            z-index: 10000;
-        }
-
-        .cart h3 {
-            text-align: center;
-        }
-
-        .cart-items {
-            list-style: none;
-            padding: 0;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .cart-item button {
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .checkout-btn {
-            background-color: green;
-            color: white;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .conta-carrinho {
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-left: -50px;
-        }
-
-        #carrinho-quantidade {
-            position: absolute;
-            top: -15px;
-            /* Ajuste a posição vertical */
-            right: -20px;
-            /* Ajuste a posição horizontal */
-            background-color: red;
-            /* Cor de fundo */
-            color: white;
-            /* Cor do texto */
-            border-radius: 100%;
-            /* Formato circular */
-            padding: 3px 7px;
-            /* Espaçamento interno */
-            font-size: 12px;
-            /* Tamanho da fonte */
         }
     </style>
-
-    <script defer src="mobile-navbar.js"></script>
 </head>
 
 <body>
@@ -496,18 +366,30 @@
                 </div>
             </nav>
             <nav class="menu-topo grid-12">
+                <!-- Ícone do carrinho para telas menores (fora do menu) -->
+                <div class="carrinho-responsivo">
+                    <a href="carrinho/carrinho.html">
+                        <img src="carrinho.png" width="35" height="35" alt="Carrinho de compras">
+                        <span id="carrinho-quantidade-responsivo">0</span>
+                    </a>
+                </div>
+
+                <!-- Botão do menu hamburguer -->
                 <button class="hamburguer">
                     <img src="hamburguer (2).png">
                 </button>
+
+                <!-- Menu de navegação -->
                 <ul class="nav-link">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre-cb.html">Sobre</a></li>
                     <li><a href="produtos-cb.html">Produtos</a></li>
                     <li><a href="conta.html">Minha Conta</a></li>
+                    <!-- Ícone do carrinho para desktop (dentro do menu) -->
                     <li class="conta-carrinho">
                         <a href="carrinho/carrinho.html">
                             <img src="carrinho.png" width="35" height="35" alt="Carrinho de compras">
-                            <span id="carrinho-quantidade">0</span> <!-- Elemento para exibir a quantidade -->
+                            <span id="carrinho-quantidade">0</span>
                         </a>
                     </li>
                 </ul>
@@ -538,7 +420,7 @@
                     <h3>TNMG 160404</h3>
                     <h1>R$ 1.99</h1>
                     <a href="potoonBoat.html"><button class="saibamais">Comprar</button></a>
-                    <button class="saibamais adicionar-carrinho" data-nome="TNMG 160408-MA VP15Tf" data-preco="120"
+                    <button class="saibamais adicionar-carrinho" data-nome="TNMG 160404" data-preco="120"
                         data-imagem="tnmg.jpg">Adicionar ao Carrinho</button>
                 </div>
                 <div class="produto">
@@ -549,34 +431,8 @@
                     <button class="saibamais adicionar-carrinho" data-nome="TNMG 160408-MA VP15Tf" data-preco="120"
                         data-imagem="tnmg.jpg">Adicionar ao Carrinho</button>
                 </div>
-                <div class="produto">
-                    <img src="tnmg.jpg" alt="Produto 3">
-                    <h3>Produto 3</h3>
-                    <h1>R$ 1.99</h1>
-                    <a href="potoonBoat.html"><button class="saibamais">Comprar</button></a>
-                    <button class="saibamais adicionar-carrinho" data-nome="TNMG 160408-MA VP15Tf" data-preco="120"
-                        data-imagem="tnmg.jpg">Adicionar ao Carrinho</button>
-                </div>
-                <div class="produto">
-                    <img src="tnmg.jpg" alt="Produto 3">
-                    <h3>Produto 3</h3>
-                    <h1>R$ 1.99</h1>
-                    <a href="potoonBoat.html"><button class="saibamais">Comprar</button></a>
-                    <button class="saibamais adicionar-carrinho" data-nome="TNMG 160408-MA VP15Tf" data-preco="120"
-                        data-imagem="tnmg.jpg">Adicionar ao Carrinho</button>
-                </div>
-                <div class="produto">
-                    <img src="tnmg.jpg" alt="Produto 3">
-                    <h3>Produto 3</h3>
-                    <h1>R$ 1.99</h1>
-                    <a href="potoonBoat.html"><button class="saibamais">Comprar</button></a>
-                    <button class="saibamais adicionar-carrinho" data-nome="TNMG 160408-MA VP15Tf" data-preco="120"
-                        data-imagem="tnmg.jpg">Adicionar ao Carrinho</button>
-                </div>
             </div>
         </section>
-
-
     </main>
     <footer>
         <div class="logo-footer">
@@ -603,8 +459,9 @@
         // Função para atualizar a quantidade no ícone do carrinho
         function atualizarQuantidadeCarrinho() {
             const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-            const quantidade = carrinho.length; // Quantidade de itens no carrinho
-            document.getElementById('carrinho-quantidade').textContent = quantidade; // Atualiza o valor
+            const quantidade = carrinho.length;
+            document.getElementById('carrinho-quantidade').textContent = quantidade;
+            document.getElementById('carrinho-quantidade-responsivo').textContent = quantidade;
         }
 
         // Adiciona evento aos botões "Adicionar ao Carrinho"
@@ -614,28 +471,19 @@
                     nome: button.getAttribute('data-nome'),
                     preco: parseFloat(button.getAttribute('data-preco')),
                     imagem: button.getAttribute('data-imagem'),
-                    quantidade: 1 // Adiciona a propriedade quantidade com valor inicial 1
+                    quantidade: 1
                 };
 
-                // Recupera o carrinho atual do localStorage ou cria um novo array
                 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-                carrinho.push(produto); // Adiciona o produto ao carrinho
-
-                // Salva o carrinho atualizado no localStorage
+                carrinho.push(produto);
                 localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-                // Atualiza a quantidade no ícone do carrinho
                 atualizarQuantidadeCarrinho();
-
-                // Redireciona para a página do carrinho
                 window.location.href = 'carrinho/carrinho.html';
             });
         });
 
         // Atualiza a quantidade ao carregar a página
         atualizarQuantidadeCarrinho();
-
-
     </script>
 </body>
 

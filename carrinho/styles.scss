@@ -1,148 +1,152 @@
-// Reset básico
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-// Estilos globais
+/* Estilos globais */
 body {
   color: #000000;
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
 }
 
-// Header
+/* Header */
 header {
   height: 60px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #0a1fac;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  img {
-    width: 100px;
-    height: 100px;
-  }
 }
 
-// Main content
+header img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Main content */
 main {
   background: #fff;
   padding: 0 30px 30px;
-
-  .page-title {
-    font-size: 40px;
-    padding: 50px 0;
-    text-align: center;
-  }
-
-  .content {
-    display: flex;
-
-    section {
-      flex: 1;
-    }
-
-    aside {
-      min-width: 250px;
-      margin-left: 30px;
-    }
-  }
 }
 
-// Tabela de produtos
+.page-title {
+  font-size: 40px;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha em telas menores */
+  gap: 20px; /* Espaçamento entre as seções */
+}
+
+section {
+  flex: 1;
+  min-width: 300px; /* Largura mínima para a seção */
+}
+
+aside {
+  min-width: 250px;
+}
+
+/* Tabela de produtos */
 table {
   width: 100%;
   border-collapse: collapse;
-
-  thead {
-    tr {
-      border-bottom: 3px solid #ccc;
-
-      th {
-        text-align: left;
-        padding-bottom: 10px;
-        text-transform: uppercase;
-        color: #666;
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      border-bottom: 3px solid #ccc;
-
-      &:last-child {
-        border: 0;
-      }
-
-      td {
-        padding: 30px 0;
-      }
-    }
-  }
 }
 
-// Estilos dos produtos
+table thead tr {
+  border-bottom: 3px solid #ccc;
+}
+
+
+
+/* Estilos da tabela */
+table th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: #666;
+  font-size: 14px; /* Tamanho da fonte dos cabeçalhos */
+  padding-right: 20px; /* Espaçamento entre os cabeçalhos */
+}
+
+
+table tbody tr {
+  border-bottom: 3px solid #ccc;
+}
+/* Estilos da tabela */
+table td {
+  padding: 15px 10px; /* Reduz o padding das células */
+  font-size: 14px; /* Tamanho da fonte do preço, quantidade e total */
+}
+
+/* Estilos dos produtos */
 .product {
   display: flex;
-  align-items: center;
-
-  img {
-    border-radius: 6px;
-  }
-
-  .info {
-    margin-left: 20px;
-
-    .name {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .category {
-      color: #666;
-    }
-  }
+  align-items: center; /* Alinha a imagem e o nome verticalmente */
+  margin-left: 20px; /* Move a seção de produtos mais para a direita */
 }
 
-// Controle de quantidade
+.product img {
+  border-radius: 6px;
+  width: 80px;
+  height: 100px;
+  margin-right: 10px; /* Espaçamento entre a imagem e o nome */
+}
+
+.product .info {
+  flex: 1;
+}
+
+.product .name {
+  font-size: 18px; /* Tamanho padrão para o nome do produto */
+  margin-bottom: 5px; /* Espaçamento inferior reduzido */
+}
+
+
+/* Controle de quantidade */
 .qty {
   background: #eee;
   display: inline-flex;
-  padding: 0 0;
+  padding: 0 6px; /* Padding interno reduzido */
   justify-content: space-around;
   align-items: center;
-  min-width: 60px;
+  min-width: 60px; /* Largura mínima reduzida */
   border-radius: 20px;
   overflow: hidden;
-  height: 30px;
-
-  span {
-    margin: 0 10px;
-  }
-
-  button {
-    display: flex;
-    align-items: center;
-    background: transparent;
-    border: 0;
-    padding: 0 10px;
-    font-size: 20px;
-    height: 100%;
-    cursor: pointer;
-
-    &:hover {
-      background: #ddd;
-    }
-  }
+  height: 22px; /* Altura reduzida */
+  gap: 4px; /* Espaçamento entre os botões e o número */
+  margin-left: 20px; /* Move o controle de quantidade para a direita */
 }
 
-// Botão de remover
+.qty span {
+  margin: 0 4px; /* Espaçamento ao redor do número reduzido */
+  font-size: 12px; /* Tamanho da fonte do número reduzido */
+}
+
+.qty button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  padding: 0 4px; /* Padding dos botões reduzido */
+  font-size: 14px; /* Tamanho da fonte dos botões reduzido */
+  height: 100%;
+  cursor: pointer;
+}
+
+.qty button:hover {
+  background: #ddd;
+}
+
+/* Botão de remover */
 .remove {
   background: #eee;
   border: 0;
@@ -154,202 +158,410 @@ table {
   justify-content: center;
   font-size: 20px;
   cursor: pointer;
-
-  &:hover {
-    background: #ddd;
-  }
+  margin-left: 20px; /* Move o botão de remover para a direita */
 }
 
-// Aside (resumo da compra)
-aside {
-  .box {
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    background: #ddd;
-    color: #222;
-
-    header {
-      color: #ddd;
-      padding: 15px 20px;
-      font-size: 18px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .info {
-      padding: 20px;
-      font-size: 16px;
-
-      > div {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        color: #555;
-
-        &:last-child {
-          margin: 0;
-        }
-      }
-
-      button {
-        color: #253cd6;
-        background: transparent;
-        border: 0;
-        display: flex;
-        align-items: center;
-        font-size: 16px;
-        cursor: pointer;
-
-        i {
-          margin-left: 5px;
-        }
-      }
-    }
-
-    footer {
-      padding: 15px 20px;
-      background: #ccc;
-      font-size: 18px;
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  > button {
-    border: 0;
-    padding: 15px 0;
-    color: white;
-    background: #0a1fac;
-    display: block;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 16px;
-    cursor: pointer;
-
-    &:hover {
-      background: #3d3c3c;
-    }
-  }
+.remove:hover {
+  background: #ddd;
 }
 
-// Footer
+/* Aside (resumo da compra) */
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #ddd;
+  color: #222;
+}
+
+aside .box header {
+  color: #ddd;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  padding: 20px;
+  font-size: 16px;
+}
+
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  background: #ccc;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside > button {
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #0a1fac;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+aside > button:hover {
+  background: #3d3c3c;
+}
+
+/* Footer */
 .site-footer {
   background-color: #303633;
   color: #fff;
   padding: 40px 20px;
   margin-top: 30px;
-
-  .logo-footer img {
-    height: 100px;
 }
 
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-    .footer-section {
-      flex: 1;
-      margin-right: 20px;
-
-      h3 {
-        font-size: 18px;
-        margin-bottom: 15px;
-        color: #fff;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #ddd;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-
-        li {
-          margin-bottom: 10px;
-
-          a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 14px;
-
-            &:hover {
-              color: #fff;
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 10px;
-
-        a {
-          color: #ddd;
-          font-size: 20px;
-          transition: color 0.3s;
-
-          &:hover {
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
-
-  .frete-input {
-    margin-top: 10px;
-}
-
-.frete-input input {
-    padding: 8px;
-    width: 150px;
-    margin-right: 10px;
-}
-
-.frete-input button {
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.frete-input button:hover {
-    background-color: #0056b3;
-}
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    font-size: 14px;
-    color: #ddd;
-  }
-}
-
-.frete-input {
+.footer-content {
   display: flex;
-  flex-direction: column;
-  gap: 5px; /* Espaçamento entre o campo de CEP e a mensagem de erro */
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Frete input */
+.frete-input {
+  margin-top: 10px;
 }
 
 .frete-input input {
   padding: 8px;
-  width: 150px;
-  margin-right: 10px;
+  width: 100%;
+  max-width: 150px;
 }
 
 #cep-error {
   color: red;
   font-size: 12px;
-  margin-top: 5px; /* Espaçamento acima da mensagem de erro */
-  display: none; /* Inicialmente oculta */
+  margin-top: 5px;
+  display: none;
 }
+
+
+/* Estilo do ícone de hambúrguer */
+.menu-icon {
+  display: none; /* Garante que o ícone seja exibido */
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff; /* Cor do ícone */
+  z-index: 1001; /* Garante que o ícone fique acima de outros elementos */
+}
+
+/* Estilo do menu de navegação */
+.navbar {
+  display: none; /* Oculta o menu em telas maiores */
+  position: fixed; /* Fixa o menu na tela */
+  top: 60px; /* Ajuste conforme a altura do header */
+  left: 0;
+  width: 100%; /* Ocupa toda a largura da tela */
+  height: auto; /* Altura automática */
+  background-color: #0a1fac; /* Cor de fundo do menu */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active {
+  display: flex; /* Exibe o menu quando ativo */
+}
+
+.navbar ul {
+  list-style: none; /* Remove as bolinhas */
+  padding-left: 0; /* Remove o padding padrão */
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.navbar ul li a {
+  color: #fff; /* Cor do texto do menu */
+  text-decoration: none;
+  font-size: 20px; /* Tamanho da fonte aumentado */
+}
+
+/* Estilo da imagem no menu */
+.navbar img {
+  display: block; /* Garante que a imagem seja exibida corretamente */
+  margin: 0 auto; /* Centraliza a imagem */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 30px;
+    padding: 20px 0;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  aside {
+    margin-top: 20px;
+  }
+
+  table {
+    width: 100%;
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+  }
+
+  table th,
+  table td {
+    padding: 10px 5px;
+    font-size: 12px;
+  }
+
+  .product {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+
+  .product img {
+    width: 60px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .product .name {
+    font-size: 14px;
+  }
+
+  .qty {
+    min-width: 50px;
+    padding: 0 4px;
+    height: 20px;
+    margin-left: 0;
+  }
+
+  .qty span {
+    font-size: 10px;
+  }
+
+  .qty button {
+    font-size: 12px;
+    padding: 0 3px;
+  }
+
+  .remove {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  aside .box header {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  aside .box .info {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  aside .box footer {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  aside > button {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .frete-input input {
+    max-width: 100%;
+  }
+
+  .menu-icon {
+    display: block; /* Exibe o ícone de hambúrguer em telas menores */
+}
+
+.navbar {
+    display: none; /* Oculta o menu por padrão */
+    position: fixed; /* Fixa o menu na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+    height: 100%; /* Ocupa toda a altura da tela */
+    background-color: #0a1fac; /* Cor de fundo do menu */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active {
+    display: flex; /* Exibe o menu quando ativo */
+}
+
+.navbar ul {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.navbar ul li a {
+    color: #fff; /* Cor do texto do menu */
+    text-decoration: none;
+    font-size: 20px; /* Tamanho da fonte aumentado */
+}
+
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 24px;
+    padding: 15px 0;
+  }
+
+  table th,
+  table td {
+    padding: 8px 3px;
+    font-size: 10px;
+  }
+
+  .product img {
+    width: 50px;
+    height: 70px;
+  }
+
+  .product .name {
+    font-size: 12px;
+  }
+
+  .qty {
+    min-width: 40px;
+    padding: 0 3px;
+    height: 18px;
+  }
+
+  .qty span {
+    font-size: 9px;
+  }
+
+  .qty button {
+    font-size: 10px;
+    padding: 0 2px;
+  }
+
+  .remove {
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+  }
+
+  aside .box header {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  aside .box .info {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  aside .box footer {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  aside > button {
+    font-size: 10px;
+    padding: 8px 0;
+  }
+
+  .footer-section h3 {
+    font-size: 16px;
+  }
+
+  .footer-section p {
+    font-size: 12px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+
+.frete-input {
+  display: flex;
+  align-items: center; /* Alinha o texto "CEP" e o input na mesma linha */
+  gap: 0; /* Remove completamente o espaçamento entre o texto e o input */
+}
+
+.frete-input input {
+  max-width: 100px; /* Tamanho do campo de CEP */
+  padding: 5px; /* Padding interno reduzido */
+  font-size: 12px; /* Tamanho da fonte reduzido */
+  margin-left: 0 !important; /* Remove qualquer margem à esquerda */
+}
+
+.frete-input span {
+  font-size: 15px; /* Tamanho da fonte do texto "CEP" */
+  white-space: nowrap; /* Impede que o texto "CEP" quebre em várias linhas */
+  margin-right: 0 !important; /* Remove qualquer margem à direita */
+}
+
+#cep-error {
+  font-size: 10px; /* Tamanho da fonte da mensagem de erro reduzido */
+  margin-top: 3px; /* Espaçamento acima da mensagem de erro */
+}
+
